@@ -1,0 +1,23 @@
+.navbar {
+    margin-bottom: 0px!important;
+}
+
+.col-md-3 {
+    padding-top: 15px;
+    background-color: #e9e9e9;
+}
+
+.list-group-flush li {
+    background-color: #e9e9e9;
+}
+
+.list-group-flush .active2 {
+    background-color: #e9e9e9;
+    color: red;
+    font-weight: bold;
+}
+
+#destaques .view .mask {
+    top: auto;
+    height: 35%;
+}
