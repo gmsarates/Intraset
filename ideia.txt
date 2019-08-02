@@ -1,0 +1,17 @@
+PROJETO: PLATAFORMA PARA INTRANET
+AUTOR: Gabriel Sarates
+
+PÁGINAS:
+- LOGIN
+- INÍCIO > Página com mural de avisos, painel de aniversariantes, quadro personalizável;
+- NOTÍCIAS > Página de publicação de conteúdo;
+- AGENDA > Página com lista de eventos;
+- TELEFONES > Página com lista de setores, pessoas e seus respectivos ramais;
+- INTEGRANTES > Página que lista todos os integrantes, com fotos e outros dados;
+- SUPORTE > Sistema de chamados embutido;
+/* ADMIN */
+- GERENCIAR NOTÍCIAS
+- CONFIGURAÇÕES
+- GERENCIAR USUÁRIOS
+- GERENCIAR EVENTOS
+
