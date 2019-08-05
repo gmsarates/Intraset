@@ -21,3 +21,9 @@
     top: auto;
     height: 35%;
 }
+
+.infContato {
+    padding-bottom: 0!important;
+    margin-bottom: 0!important;
+    color: #777;
+}

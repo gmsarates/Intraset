@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script>
+            function procurarPessoa() {
+                // Declare variables 
+                var input, filter, table, tr, td, i, txtValue;
+                input = document.getElementById("procurarPessoa");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("listDiv");
+                tr = table.getElementsByTagName("tr");
+                
+                // Loop tdrough all table rows, and hide tdose who don't match tde search query
+                for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                
+                    if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                    } else {
+                        if (filter.length > 3) {
+                        tr[i].style.display = "none";
+                        }
+                    }
+                }
+                }
+            }
+    </script>
+  </head>
+  <body style="height: 100%; margin: 0;">
+    <!--Navbar -->
+    <nav class="mb-1 navbar sticky-top navbar-expand-lg navbar-dark elegant-color">
+      <a class="navbar-brand" href="#">Intraset</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+      aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="noticias.html">Notícias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="agenda.html">Agenda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="telefones.html">Telefones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="integrantes.html">Integrantes</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Suporte</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+            <span class="navbar-text gray-text">
+                Não conectado
+            </span>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-default"
+            aria-labelledby="navbarDropdownMenuLink-333">
+              <a class="dropdown-item" href="#">Login</a>
+              <a class="dropdown-item disabled" style="color: #777" href="#">Configurações</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!--/.Navbar -->
+    
+    <!-- IFRAME PRINCIPAL -->
+    <div class="container-fluid text-center">    
+      <div class="row content">
+        <div class="col-md"> 
+            <div class="content">
+                <h1 class="h1-responsive font-weight-bold m-5">Lista de integrantes</h1>
+                <!-- Search form -->
+                <div class="input-group md-form form-sm form-1 pl-0">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text cyan lighten-2" id="basic-text1"><i class="fas fa-search text-white" aria-hidden="true"></i></span>
+                    </div>
+                    <input id="procurarPessoa" onkeyup="procurarPessoa()" class="form-control my-0 py-1" type="text" placeholder="Procurar" aria-label="Search" style="border-color: rgb(206, 212, 218); border-style: solid; border-width: 1px;">
+                    
+                </div>
+                
+                
+                
+                <!-- List -->
+                <table id="listDiv" class="table table-bordered table-striped">
+                    <tr>
+                        <td>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                            <img src="images/avatar.png" style="width: 150px" class="rounded mx-auto d-block" alt="...">
+                                    </div>
+                                    <div class="col-md-10">
+                                        <h3 class="h3-responsive h5">Gabriel Sarates</h3>
+                                        <h6>
+                                            <span class="badge badge-info">Informática</span>
+                                            <span class="badge badge-default">Desenvolvedor</span>
+                                        </h6>
+                                        <br>
+                                        <small class="infContato">Informações de contato</small>
+                                        <hr class="mt-0 pt-0">
+                                        <div class="row d-flex justify-content-center">
+                                            <div class="d-flex w-50 justify-content-between">
+                                                <span class="mb-2 text">email@email.com</span>
+                                                <span class="mb-2 text">ramal</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                            <img src="images/avatar.png" style="width: 150px" class="rounded mx-auto d-block" alt="...">
+                                    </div>
+                                    <div class="col-md-10">
+                                        <h3 class="h3-responsive h5">Fulano de Tal</h3>
+                                        <h6>
+                                            <span class="badge badge-info">RH</span>
+                                            <span class="badge badge-default">Supervisor</span>
+                                        </h6>
+                                        <br>
+                                        <small class="infContato">Informações de contato</small>
+                                        <hr class="mt-0 pt-0">
+                                        <div class="row d-flex justify-content-center">
+                                            <div class="d-flex w-50 justify-content-between">
+                                                <span class="mb-2 text">email@email.com</span>
+                                                <span class="mb-2 text">ramal</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                            <img src="images/avatar.png" style="width: 150px" class="rounded mx-auto d-block" alt="...">
+                                    </div>
+                                    <div class="col-md-10">
+                                        <h3 class="h3-responsive h5">Pessoa 03</h3>
+                                        <h6>
+                                            <span class="badge badge-info">Setor</span>
+                                            <span class="badge badge-default">Função</span>
+                                        </h6>
+                                        <br>
+                                        <small class="infContato">Informações de contato</small>
+                                        <hr class="mt-0 pt-0">
+                                        <div class="row d-flex justify-content-center">
+                                            <div class="d-flex w-50 justify-content-between">
+                                                <span class="mb-2 text">email@email.com</span>
+                                                <span class="mb-2 text">ramal</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+
+
+            </div> <!-- /CONTENT -->
+        </div>
+      </div>
+    </div>
+    <div class="row my-4"></div>
+    
+    
+    
+    
+    <footer class="page-footer font-small elegant-color">
+        <div class="footer-copyright text-center py-3">© 2019 Copyright:
+            <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+        </div>
+    </footer>
+
+  </body>
+</html>

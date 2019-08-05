@@ -15,7 +15,7 @@
   </head>
   <body style="height: 100%; margin: 0;">
     <!--Navbar -->
-    <nav class="mb-1 navbar navbar-expand-lg navbar-dark elegant-color">
+    <nav class="mb-1 navbar sticky-top navbar-expand-lg navbar-dark elegant-color">
       <a class="navbar-brand" href="#">Intraset</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
       aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,10 +36,10 @@
             <a class="nav-link" href="#">Telefones</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Integrantes</a>
+            <a class="nav-link" href="integrantes.html">Integrantes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Suporte</a>
+            <a class="nav-link" href="suporte.html">Suporte</a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -73,76 +73,97 @@
         <div class="col-md"> 
           <div class="content">
             <!-- Section: Blog v.2 -->
-          <section class="text-center my-5">
+          
+            <section class="text-center my-5">
 
-    <!-- PRINCIPAIS NOTICIAS -->
-    <h2 class="h1-responsive font-weight-bold my-5">Agenda de eventos</h2>
-      
-    <div class="card text-white bg-dark">
-        <div class="card-header text-left">Eventos diários</div>
-        <div class="card-body">
-          <p class="card-text text-white text-left">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
-        </div>
-      </div>
-    
-  </section>
-</div>
-        </div>
-      </div>
-      <h3 class="font-weight-bold ">Todos os eventos</h3>
-      <div class="list-group">
-          <div class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-2 h5">List group item heading</h5>
-              <small>3 days ago</small>
-            </div>
-            <p class="mb-2 text-left">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
-              blandit.</p>
-            <p class="small text-left">Donec id elit non mi porta.</p>
+              <!-- PRINCIPAIS NOTICIAS -->
+              <h2 class="h1-responsive font-weight-bold my-5">Guia de telefones</h2>
+              <div class="card text-left">
+                  <div class="card-header">Como ligar</div>
+                  <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  </div>
+                </div>
+            </section>
           </div>
-          <div class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-2 h5">List group item heading</h5>
-              <small class="text-muted">3 days ago</small>
-            </div>
-            <p class="mb-2 text-left">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
-              blandit.</p>
-            <p class="small text-left">Donec id elit non mi porta.</p>
-          </div>
-          <div class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-2 h5">List group item heading</h5>
-              <small class="text-muted">3 days ago</small>
-            </div>
-            <p class="mb-2 text-left">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
-              blandit.</p>
-            <p class="small text-left">Donec id elit non mi porta.</p>
-            </div>
         </div>
-        <hr>
-
-<!-- Full Height Modal Right -->
-<div class="modal fade bottom" id="fullHeightModalRight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-
-  <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
-  <div class="modal-dialog modal-full-height modal-bottom" role="document">
-
-
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title w-100" id="myModalLabel">Título da notícia</h4>
       </div>
-      <div class="modal-body">
-        [CONTEÚDO DA NOTÍCIA]
+      <!--Accordion wrapper-->
+<div class="accordion md-accordion accordion-blocks" id="accordionEx78" role="tablist"
+aria-multiselectable="true">
+
+<!-- Accordion card -->
+<div class="card">
+
+  <!-- Card header -->
+  <div class="card-header" role="tab" id="headingUnfiled">
+
+    <!-- Heading -->
+    <a data-toggle="collapse" data-parent="#accordionEx78" href="#collapseUnfiled" aria-expanded="true"
+      aria-controls="collapseUnfiled">
+      <h5 class="mt-1 mb-0 text-left">
+        <span>Setor A</span>
+        <i class="fas fa-angle-down rotate-icon"></i>
+      </h5>
+    </a>
+
+  </div>
+
+  <!-- Card body -->
+  <div id="collapseUnfiled" class="collapse" role="tabpanel" aria-labelledby="headingUnfiled"
+    data-parent="#accordionEx78">
+    <div class="card-body">
+      <!-- Table responsive wrapper -->
+      <div class="table-responsive mx-3">
+        <!--Table-->
+        <table id="telefones" class="table table-hover mb-0">
+
+          <!--Table head-->
+          <thead>
+            <tr>
+              <th class="th-lg"><a>Nome</a></th>
+              <th class="th-lg"><a>Função</a></th>
+              <th class="th-lg"><a>Telefone / Ramal</a></th>
+              <th></th>
+            </tr>
+          </thead>
+          <!--Table head-->
+
+          <!--Table body-->
+          <tbody>
+            <tr>
+              
+              <td>Test subscription</td>
+              <td>Scroll % is equal or greater than <strong>80</strong></td>
+              <td>12.06.2017</td>
+            </tr>
+            <tr>
+              <td>Product Hunt Visitor</td>
+              <td>Scroll % is equal or greater than <strong>80</strong></td>
+              <td>13.06.2017</td>
+            </tr>
+            <tr>
+              <td>Test subscription</td>
+              <td>Scroll % is equal or greater than <strong>80</strong></td>
+              <td>12.06.2017</td>
+            </tr>
+          </tbody>
+          <!--Table body-->
+        </table>
+        <!--Table-->
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary text-right" data-dismiss="modal">Close</button>
-      </div>
+      <!-- Table responsive wrapper -->
+
     </div>
   </div>
 </div>
-<!-- Full Height Modal Right -->
+<!-- Accordion card -->
+
+</div>
+<!--/.Accordion wrapper-->
+ <hr class="my-4">
+
 
   </div>
     <footer class="page-footer font-small elegant-color">
