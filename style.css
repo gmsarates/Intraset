@@ -27,3 +27,19 @@
     margin-bottom: 0!important;
     color: #777;
 }
+
+.row {
+    margin: 0px;
+}
+
+.container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+@media(max-width: 500px) {
+    .dadosContato {
+        display: grid!important;
+        justify-content: normal!important;
+    }
+}
