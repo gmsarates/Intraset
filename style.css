@@ -1,3 +1,12 @@
+html, body {
+    height: 100%;
+  }
+  
+  .full-height {
+    height: calc(100% - 117px);
+  }
+  
+
 .active-dark {
     background-color: #212529;
     border-color: #212529;
