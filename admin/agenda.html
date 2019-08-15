@@ -14,6 +14,45 @@
     <script type="text/javascript" src="../js/popper.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/mdb.min.js"></script>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
+    <script>
+      var dialogConfig =  {
+        title: 'Adicionar botão',
+        body: {
+          type: 'panel',
+          items: [
+            {type: 'input', name: 'txtNome', label: 'Digite texto do botão'},
+            {type: 'input', name: 'txtLink', label: 'Digite link do botão'},
+            {type: 'htmlpanel', html: '<p>O botão ficará sem estilo apenas dentro do editor.</p>'}
+          ]},
+        buttons: [
+          {type: 'cancel', name: 'closeButton', text: 'Cancelar'},
+          {type: 'submit', name: 'submitButton', text: 'Inserir', primary: true}
+        ],
+        initialData: {txtNome: 'Título', txtLink: 'Link'},
+        onSubmit: function (api) {
+          var data = api.getData();
+          var nome = data.txtNome;
+          var link = data.txtLink;
+
+          tinymce.activeEditor.execCommand('mceInsertContent', false, '<a href="' + link + '" class="btn btn-dark">' + nome + '</a>');
+          api.close();
+        }
+      };
+          
+    tinymce.init({
+      selector:'textarea', height: 300, plugins: "code",
+      toolbar: "undo redo | styleselect fontselect fontsizeselect | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | outdent indent | bullist numlist | paste copy cut | addBtn | code",
+      setup: (editor) => {
+          editor.ui.registry.addButton('addBtn', {
+          text: 'Adicionar botão',
+          onAction: function (_){
+            editor.windowManager.open(dialogConfig)
+          }
+        });
+      }
+    });
+    </script>
   </head>
   <body style="height: 100%; margin: 0;">
     <!--Navbar -->
@@ -55,9 +94,9 @@
               <a class="dropdown-item" href="index.html">Painel de controle</a>
               <div class="dropdown-divider"></div>
               <h6 class="dropdown-header">CONTEÚDO</h6>
-              <a class="dropdown-item" href="inicial.html">Gerenciar página inicial</a>
-              <a class="dropdown-item active-dark" href="#">Gerenciar notícias</a>
-              <a class="dropdown-item" href="agenda.html">Gerenciar agenda</a>
+              <a class="dropdown-item" href="index.html">Gerenciar página inicial</a>
+              <a class="dropdown-item" href="noticias.html">Gerenciar notícias</a>
+              <a class="dropdown-item active-dark" href="#">Gerenciar agenda</a>
               <a class="dropdown-item" href="telefones.html">Gerenciar setores</a>
               <a class="dropdown-item" href="#">Gerenciar suporte</a>
               <div class="dropdown-divider"></div>
@@ -95,8 +134,8 @@
                 <div class="list-group">
                     <a class="list-group-item list-group-item-action" href="index.html">Painel de controle</a>
                     <a class="list-group-item list-group-item-action" href="inicial.html">Gerenciar página inicial</a>
-                    <a class="list-group-item list-group-item-action active-dark" href="#">Gerenciar notícias</a>
-                    <a class="list-group-item list-group-item-action" href="agenda.html">Gerenciar agenda</a>
+                    <a class="list-group-item list-group-item-action" href="noticias.html">Gerenciar notícias</a>
+                    <a class="list-group-item list-group-item-action active-dark" href="#">Gerenciar agenda</a>
                     <a class="list-group-item list-group-item-action" href="telefones.html">Gerenciar setores</a>
                     <a class="list-group-item list-group-item-action" href="#">Gerenciar suporte</a>
                     <a class="list-group-item list-group-item-action" href="#">Configurações gerais</a>
@@ -109,50 +148,64 @@
 
 
             <div class="col-md-9 text-left" style="margin-top: 25px;"> 
-              <div class="container p-0 m-0">             
-                <div class="row">
-                  <div class="col-md">
-                    <h2 class="h1-responsive font-weight-bold m-3">Todas as notícias</h2>
-                    <a href="#" class="btn btn-dark">Adicionar notícia</a>
-                    <ul class="list-group mt-2">
-                        <li class="list-group-item text-left">
-                          <div class="md-v-line"></div><i class="fas fa-laptop mr-4 pr-3"></i> <a href="#" class="text-info"  data-toggle="modal" data-target="#fullHeightModalRight">Cras justo odio</a>
-                        </li>
-                        <li class="list-group-item text-left">
-                          <div class="md-v-line"></div><i class="fas fa-bomb mr-5"></i>Dapibus ac facilisis in
-                        </li>
-                        <li class="list-group-item text-left">
-                          <div class="md-v-line"></div><i class="fas fa-code mr-5"></i>Morbi leo risus
-                        </li>
-                        <li class="list-group-item text-left">
-                          <div class="md-v-line"></div><i class="far fa-gem mr-5"></i>Porta ac consectetur ac
-                        </li>
-                        <li class="list-group-item text-left">
-                          <div class="md-v-line"></div><i class="fas fa-cogs mr-5"></i>Vestibulum at eros
-                        </li>
-                    </ul>
-                    <hr class="my-5">
-                    <!-- Full Height Modal Right -->
-                    <div class="modal fade bottom" id="fullHeightModalRight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-full-height modal-bottom text-center" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h4 class="modal-title w-100" id="myModalLabel">Título da notícia</h4>
-                          </div>
-                          <div class="modal-body">
-                            [CONTEÚDO DA NOTÍCIA]
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-red text-right">Excluir</button>
-                            <button type="button" class="btn btn-dark text-right" data-dismiss="modal">Fechar</button>
-                          </div>
-                        </div>
-                      </div>
+              <!-- <div class="w-100" style="height: 750px;"> -->
+                <div class="container p-0 m-0">
+                  <div class="row"> 
+                    <div class="col-md">
+                        <h1 class="h1-responsive pb-0 mb-0">Gerenciar agenda</h1> 
+                        <h6 class="p-0 m-0 grey-text">Gerencie os eventos da agenda.</h6>
                     </div>
                   </div>
-                </div>
+                  <div class="row">
+                    <div class="col-md">
+                        <form class="p-2 mb-4">
+                            <small id="helper" class="form-text text-muted mb-1">Painel de avisos</small>
+                            <label for="textInput">Título</label>
+                            <input type="text" id="textInput" class="form-control mb-4" placeholder="Eventos diários">
+                        
+                            <label for="textarea">Conteúdo</label>
+                            <div class="mb-3" style="height: 300px">
+                              <textarea id="textarea" class="form-control mb-4" placeholder="Textarea"></textarea>
+                            </div>
+                            <button class="btn btn-dark btn-block" type="submit">Salvar</button>
+                        </form>
+                        <h3 class="font-weight-bold m-3 text-center">Todos os eventos</h3>
+                        <a href="#" class="btn btn-dark mb-3">Novo evento</a>
+                        <div class="list-group">
+                            <div class="list-group-item list-group-item-action flex-column align-items-start">
+                              <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-2 h5">List group item heading</h5>
+                                <small>3 days ago</small>
+                              </div>
+                              <p class="mb-2 text-left">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
+                                blandit.</p>
+                              <p class="small text-left">Donec id elit non mi porta.</p>
+                            </div>
+                            <div class="list-group-item list-group-item-action flex-column align-items-start">
+                              <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-2 h5">List group item heading</h5>
+                                <small class="text-muted">3 days ago</small>
+                              </div>
+                              <p class="mb-2 text-left">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
+                                blandit.</p>
+                              <p class="small text-left">Donec id elit non mi porta.</p>
+                            </div>
+                            <div class="list-group-item list-group-item-action flex-column align-items-start">
+                              <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-2 h5">List group item heading</h5>
+                                <small class="text-muted">3 days ago</small>
+                              </div>
+                              <p class="mb-2 text-left">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
+                                blandit.</p>
+                              <p class="small text-left">Donec id elit non mi porta.</p>
+                              </div>
+                          </div>
+                          <hr>
+                    </div>
+                  </div>
 
-              </div>
+                </div>
+              <!-- </div> -->
             </div>
         
       </div>

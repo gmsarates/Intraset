@@ -2,9 +2,13 @@
     display: none!important;
 }
 
-html, body {
+.separadorVazio {
+    margin-top: 100%;
+}
+
+/* html, body {
     height: 100%;
-  }
+  } */
   
   .full-height {
     height: calc(100% - 117px);
@@ -60,5 +64,11 @@ html, body {
     .dadosContato {
         display: grid!important;
         justify-content: normal!important;
+    }
+}
+
+@media(max-width: 770px) {
+    .separadorVazio {
+        margin-top: 0;
     }
 }
