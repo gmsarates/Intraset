@@ -10,6 +10,7 @@
     <link href="../css/mdb.min.css" rel="stylesheet">
     <link href="../style.css" rel="stylesheet">
     <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="../js/popper.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/mdb.min.js"></script>
@@ -51,11 +52,11 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-default"
             aria-labelledby="navbarDropdownMenuLink-333">
-              <a class="dropdown-item active-dark" href="#">Painel de controle</a>
+              <a class="dropdown-item" href="index.html">Painel de controle</a>
               <div class="dropdown-divider"></div>
               <h6 class="dropdown-header">CONTEÚDO</h6>
               <a class="dropdown-item" href="inicial.html">Gerenciar página inicial</a>
-              <a class="dropdown-item" href="noticias.html">Gerenciar notícias</a>
+              <a class="dropdown-item active-dark" href="#">Gerenciar notícias</a>
               <a class="dropdown-item" href="#">Gerenciar agenda</a>
               <a class="dropdown-item" href="#">Gerenciar suporte</a>
               <div class="dropdown-divider"></div>
@@ -86,14 +87,14 @@
     <!--/.Navbar -->
     
     <!-- IFRAME PRINCIPAL -->
-    <div class="full-height text-center m-0 p-0 w-100 mt-5">    
-        <div class="row content h-100 w-100">
-            <div class="col-md-3 sidenav border-right z-depth-1 blue-grey lighten-5 p-3 h-100">
+    <div class="container-fluid text-center mt-5">    
+        <div class="row content">
+            <div class="col-md-3 sidenav border-right z-depth-1 blue-grey lighten-5 p-3">
                 <h2 class="text-center">Administração</h2>
                 <div class="list-group">
-                    <a class="list-group-item list-group-item-action active-dark" href="#">Painel de controle</a>
+                    <a class="list-group-item list-group-item-action" href="index.html">Painel de controle</a>
                     <a class="list-group-item list-group-item-action" href="inicial.html">Gerenciar página inicial</a>
-                    <a class="list-group-item list-group-item-action" href="noticias.html">Gerenciar notícias</a>
+                    <a class="list-group-item list-group-item-action active-dark" href="#">Gerenciar notícias</a>
                     <a class="list-group-item list-group-item-action" href="#">Gerenciar agenda</a>
                     <a class="list-group-item list-group-item-action" href="#">Gerenciar suporte</a>
                     <a class="list-group-item list-group-item-action" href="#">Configurações gerais</a>
@@ -105,85 +106,56 @@
             </div>
 
 
-            <div class="col-md-9 text-left w-100 p-0" style="margin-top: 25px;"> 
-              <div class="w-100" style="height: 750px;">
-                <div class="container p-0 m-0">
-                  <div class="row">
-                    <div class="col-md-12">
-                        <div class="alert alert-success" role="alert">
-                          SUPORTE DE TI ESTÁ <span class="font-weight-bold">ONLINE</span>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm">
-                      
-                      <div class="card text-center bg-light">
-                        <div class="card-header">Notícias</div>
-                        <div class="card-body ">
-                          <p class="card-title"><span class="font-weight-bold">X</span> NOTÍCIAS</p>
-                          <a href="#!" class="btn btn-dark">Gerenciar notícias</a>
-                        </div>
-                      </div>
-
-                    </div>
-                    <div class="col-sm">
-                      
-                      <div class="card text-center bg-light">
-                        <div class="card-header">Agenda</div>
-                        <div class="card-body ">
-                          <p class="card-title"><span class="font-weight-bold">X</span> EVENTOS ESTA SEMANA</p>
-                          <a href="#!" class="btn btn-dark">Gerenciar agenda</a>
-                        </div>
-                      </div>
-
-                    </div>
-                    <div class="col-sm">
-                      
-                      <div class="card text-center bg-primary text-white">
-                        <div class="card-header font-weight-bold">Suporte</div>
-                        <div class="card-body ">
-                          <p class="card-title"><span class="font-weight-bold">X</span> CHAMADOS ABERTOS</p>
-                          <a href="#!" class="btn btn-dark">Ver chamados</a>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12 mt-3">
-                        <div class="card text-center">
-                          <div class="card-header">Usuários</div>
-                          <div class="card-body ">
-                            
-                              <table class="table">
-                                  <thead>
-                                    <tr>
-                                      <th scope="col">Usuários cadastrados</th>
-                                      <th scope="col">Usuários ativos</th>
-                                      <th scope="col">Usuários bloqueados</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <td>20</td>
-                                      <td>18</td>
-                                      <td>2</td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                            <a href="#!" class="btn btn-dark">Gerenciar usuários</a>
+            <div class="col-md-9 text-left" style="margin-top: 25px;"> 
+              <div class="container p-0 m-0">             
+                <div class="row">
+                  <div class="col-md">
+                    <h2 class="h1-responsive font-weight-bold m-3">Todas as notícias</h2>
+                    <a href="#" class="btn btn-dark">Adicionar notícia</a>
+                    <ul class="list-group">
+                        <li class="list-group-item text-left">
+                          <div class="md-v-line"></div><i class="fas fa-laptop mr-4 pr-3"></i> <a href="#" class="text-info"  data-toggle="modal" data-target="#fullHeightModalRight">Cras justo odio</a>
+                        </li>
+                        <li class="list-group-item text-left">
+                          <div class="md-v-line"></div><i class="fas fa-bomb mr-5"></i>Dapibus ac facilisis in
+                        </li>
+                        <li class="list-group-item text-left">
+                          <div class="md-v-line"></div><i class="fas fa-code mr-5"></i>Morbi leo risus
+                        </li>
+                        <li class="list-group-item text-left">
+                          <div class="md-v-line"></div><i class="far fa-gem mr-5"></i>Porta ac consectetur ac
+                        </li>
+                        <li class="list-group-item text-left">
+                          <div class="md-v-line"></div><i class="fas fa-cogs mr-5"></i>Vestibulum at eros
+                        </li>
+                    </ul>
+                    <hr class="my-5">
+                    <!-- Full Height Modal Right -->
+                    <div class="modal fade bottom" id="fullHeightModalRight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-full-height modal-bottom text-center" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h4 class="modal-title w-100" id="myModalLabel">Título da notícia</h4>
+                          </div>
+                          <div class="modal-body">
+                            [CONTEÚDO DA NOTÍCIA]
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-red text-right">Excluir</button>
+                            <button type="button" class="btn btn-dark text-right" data-dismiss="modal">Fechar</button>
                           </div>
                         </div>
+                      </div>
                     </div>
                   </div>
                 </div>
+
               </div>
             </div>
         
       </div>
     </div>
-    <footer class="page-footer font-small elegant-color" style="z-index: 1020">
+    <footer class="page-footer font-small elegant-color">
         <div class="footer-copyright text-center py-3">© 2019 Copyright:
           <a href="https://github.com/gmsarates/"> Gabriel Sarates</a>
         </div>
